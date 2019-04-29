@@ -61,7 +61,7 @@ function fetchWeatherApi(cityValue) {
 //  changing inner dom text
 function changeDataInnerText() {
   description.innerText = selectedCity.weather[0].description;
-  wind.innerText = `Deg - ${selectedCity.wind.deg}, Speed-${
+  wind.innerText = `Speed - ${
     selectedCity.wind.speed
   }`;
   temp.innerText = selectedCity.main.temp;
@@ -88,9 +88,13 @@ function clickedMarker(e) {
   fetchWeatherApi(city.options[city.selectedIndex].value);
 }
 
+//making it typescript with ts-node
+// arrange folders & links
 //make mobile friendyly
 //add weatherApi title - design
 //caching
+//making readme
+
 
 //adding icons - bonus
 // String iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
