@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <meta charset="UTF-8" />
+    <title>Open Weather Map</title>
+  </head>
+  <body>
+    <div class="row no-gutters">
+      <div class="col no-gutters">
+        <div class="leftside justify-content-center">
+          <p>Please Select City For Info</p>
+          <select id="citySelection">
+            <option value="2643743">London</option>
+            <option value="293396">Tel Aviv</option>
+            <option value="281184">Jerusalem</option>
+            <option value="2759794">Amsterdam</option>
+            <option value="1850147">Tokyo</option>
+            <option value="3054643">Budapest</option>
+            <option value="1609350">Bangkok</option>
+          </select>
+          <p>
+            Description:<br /><span id="description" class="results"></span>
+          </p>
+          <p>Temperature:<br /><span id="temp" class="results"></span></p>
+          <p>Wind:<br /><span id="wind" class="results"> </span></p>
+          <p>Humidity:<br /><span id="humidity" class="results"></span></p>
+        </div>
+      </div>
+      <div class="col no-gutters">
+        <div class="rightside">
+          <div id="mapId"></div>
+        </div>
+      </div>
+      <!--leaflet script-->
+      <script
+        src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""
+      ></script>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>
