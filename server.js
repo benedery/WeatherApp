@@ -1,16 +1,15 @@
-const http = require("http");
-const fs = require("fs");
-const path = require("path");
+var http = require("http");
+var fs = require("fs");
+var path = require("path");
 
 http
   .createServer(function(request, response) {
-    let filePath = "." + request.url;
-    if (filePath == "./") {
+    var filePath = "." + request.url;
+    if (filePath === "./") {
       filePath = "./index.html";
     }
-
-    let extname = String(path.extname(filePath)).toLowerCase();
-    const mimeTypes = {
+    var extname = String(path.extname(filePath)).toLowerCase();
+    var mimeTypes = {
       ".html": "text/html",
       ".js": "text/javascript",
       ".css": "text/css",
@@ -26,9 +25,7 @@ http
       ".otf": "application/font-otf",
       ".svg": "application/image/svg+xml"
     };
-
-    const contentType = mimeTypes[extname] || "application/octet-stream";
-
+    var contentType = mimeTypes[extname] || "application/octet-stream";
     fs.readFile(filePath, function(error, content) {
       if (error) {
         if (error.code === "ENOENT") {
