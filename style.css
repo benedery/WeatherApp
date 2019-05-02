@@ -25,3 +25,8 @@ body {
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.47);
     font-size: 2.5rem;
 }
+
+#weatherIcon img{
+    width: 60px;
+    height: 60px;
+}

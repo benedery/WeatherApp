@@ -53,3 +53,10 @@ http
     })
     .listen(8125);
 console.log("Server running at http://127.0.0.1:8125/");
+
+//import create server,incmigmessage, server respone from http;s
+//req:incoming message
+//file name string V
+//ext string
+//res: server respone
+//nodemon --exec ts-node index.ts

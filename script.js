@@ -4,6 +4,8 @@ const description = document.getElementById("description");
 const wind = document.getElementById("wind");
 const temp = document.getElementById("temp");
 const humidity = document.getElementById("humidity");
+const weatherIcon = document.getElementById("weatherIcon");
+
 // declare map constant
 const mymap = L.map("mapId").setView([51.50853, -0.13], 13);
 L.tileLayer(
@@ -60,13 +62,14 @@ function fetchWeatherApi(cityValue) {
 }
 //  changing inner dom text
 function changeDataInnerText() {
+  const iconCode = selectedCity.weather[0].icon;
   description.innerText = selectedCity.weather[0].description;
-  wind.innerText = `Speed - ${
-    selectedCity.wind.speed
-  }`;
+  wind.innerText = `Speed - ${selectedCity.wind.speed}`;
   temp.innerText = selectedCity.main.temp;
   humidity.innerText = `${selectedCity.main.humidity}%`;
+  weatherIcon.innerHTML = `<img alt="icon" src="http://openweathermap.org/img/w/${iconCode}.png" </img>`;
 }
+
 // pointing to selected location & create red marker layer
 function pointAndColor() {
   mymap.panTo({
@@ -95,6 +98,5 @@ function clickedMarker(e) {
 //caching
 //making readme
 
-
-//adding icons - bonus
+//adding icons - bonus V
 // String iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
