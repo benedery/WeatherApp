@@ -1,32 +1,40 @@
 body {
-    font-family: 'Lato', sans-serif;
-    background: #43cea2; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #185a9d, #43cea2); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Lato", sans-serif;
+  background: #43cea2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #185a9d,
+    #43cea2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #185a9d,
+    #43cea2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #mapId {
-    height: 100vh;
+  height: 100vh;
 }
 
 .rightside {
-    height: 100vh;
+  height: 100vh;
 }
 
 .leftside {
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-    color: white;
-    font-size: 1.6rem;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 1.6rem;
 }
 
 .results {
-    text-transform: capitalize;
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.47);
-    font-size: 2.5rem;
+  text-transform: capitalize;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.47);
+  font-size: 2.5rem;
 }
 
-#weatherIcon img{
-    width: 60px;
-    height: 60px;
+#weatherIcon img {
+  width: 60px;
+  height: 60px;
 }

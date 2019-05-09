@@ -88,6 +88,3 @@ function clickedMarker(e) {
   city.selectedIndex = e.target.options.index;
   fetchWeatherApi(city.options[city.selectedIndex].value);
 }
-
-//caching
-//making readme
