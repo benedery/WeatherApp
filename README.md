@@ -19,7 +19,7 @@ Real-Time.
 
 4.Run `npm start`, to run the App.
 
-3.Smile :)
+5.Smile :)
 
 Port is set to **8125**
 
