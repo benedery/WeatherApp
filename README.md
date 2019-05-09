@@ -11,7 +11,7 @@ Real-Time.
 
 
 # Usage
-1.Run `git clone https://github.com/benedery/WeatherApp.git`.
+1.Run `git clone https://github.com/benedery/WeatherApp.git`
 
 2.Open repo  `cd Weather-Map-App`
 
