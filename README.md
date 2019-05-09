@@ -5,11 +5,21 @@ Project made from scratch using Vanilla JS
 
 **This project uses the leaflet map Library**
 
+In this project you can select several cities
+around the world and get Weather and location details in
+Real-Time.
+
+
 # Usage
+1.Run `git clone https://github.com/benedery/WeatherApp.git`.
 
-1.Run `npm install`, to install the module's prerequisites
+2.Open repo  `cd Weather-Map-App`
 
-2.Run `npm start`, to run the App.
+3.Run `npm install`, to install the module's prerequisites
+
+4.Run `npm start`, to run the App.
+
+3.Smile :)
 
 Port is set to **8125**
 

@@ -1,62 +1,58 @@
-const http = require("http");
-const fs = require("fs");
-const path = require("path");
+import * as http from "http";
+import * as fs from "fs";
+import * as path from "path";
 
 http
-    .createServer(function(request, response) {
-        let filePath: string = "." + request.url;
-        if (filePath === "./") {
-            filePath = "./index.html";
+  .createServer(function(
+    request: http.IncomingMessage,
+    response: http.ServerResponse
+  ) {
+    let filePath: string = "." + request.url;
+    if (filePath === "./") {
+      filePath = "./index.html";
+    }
+
+    let extname: string = String(path.extname(filePath)).toLowerCase();
+    const mimeTypes = {
+      ".html": "text/html",
+      ".js": "text/javascript",
+      ".css": "text/css",
+      ".json": "application/json",
+      ".png": "image/png",
+      ".jpg": "image/jpg",
+      ".gif": "image/gif",
+      ".wav": "audio/wav",
+      ".mp4": "video/mp4",
+      ".woff": "application/font-woff",
+      ".ttf": "application/font-ttf",
+      ".eot": "application/vnd.ms-fontobject",
+      ".otf": "application/font-otf",
+      ".svg": "application/image/svg+xml"
+    };
+
+    const contentType = mimeTypes[extname] || "application/octet-stream";
+
+    fs.readFile(filePath, function(error, content) {
+      if (error) {
+        if (error.code === "ENOENT") {
+          fs.readFile("./404.html", function(error, content) {
+            response.writeHead(200, { "Content-Type": contentType });
+            response.end(content, "utf-8");
+          });
+        } else {
+          response.writeHead(500);
+          response.end(
+            "Sorry, check with the site admin for error: " +
+              error.code +
+              " ..\n"
+          );
+          response.end();
         }
-
-        let extname :string = String(path.extname(filePath)).toLowerCase();
-        const mimeTypes = {
-            ".html": "text/html",
-            ".js": "text/javascript",
-            ".css": "text/css",
-            ".json": "application/json",
-            ".png": "image/png",
-            ".jpg": "image/jpg",
-            ".gif": "image/gif",
-            ".wav": "audio/wav",
-            ".mp4": "video/mp4",
-            ".woff": "application/font-woff",
-            ".ttf": "application/font-ttf",
-            ".eot": "application/vnd.ms-fontobject",
-            ".otf": "application/font-otf",
-            ".svg": "application/image/svg+xml"
-        };
-
-        const contentType = mimeTypes[extname] || "application/octet-stream";
-
-        fs.readFile(filePath, function(error, content) {
-            if (error) {
-                if (error.code === "ENOENT") {
-                    fs.readFile("./404.html", function(error, content) {
-                        response.writeHead(200, { "Content-Type": contentType });
-                        response.end(content, "utf-8");
-                    });
-                } else {
-                    response.writeHead(500);
-                    response.end(
-                        "Sorry, check with the site admin for error: " +
-                        error.code +
-                        " ..\n"
-                    );
-                    response.end();
-                }
-            } else {
-                response.writeHead(200, { "Content-Type": contentType });
-                response.end(content, "utf-8");
-            }
-        });
-    })
-    .listen(8125);
+      } else {
+        response.writeHead(200, { "Content-Type": contentType });
+        response.end(content, "utf-8");
+      }
+    });
+  })
+  .listen(8125);
 console.log("Server running at http://127.0.0.1:8125/");
-
-//import create server,incmigmessage, server respone from http;s
-//req:incoming message
-//file name string V
-//ext string
-//res: server respone
-//nodemon --exec ts-node index.ts

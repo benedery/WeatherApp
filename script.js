@@ -5,7 +5,6 @@ const wind = document.getElementById("wind");
 const temp = document.getElementById("temp");
 const humidity = document.getElementById("humidity");
 const weatherIcon = document.getElementById("weatherIcon");
-
 // declare map constant
 const mymap = L.map("mapId").setView([51.50853, -0.13], 13);
 L.tileLayer(
@@ -69,7 +68,6 @@ function changeDataInnerText() {
   humidity.innerText = `${selectedCity.main.humidity}%`;
   weatherIcon.innerHTML = `<img alt="icon" src="http://openweathermap.org/img/w/${iconCode}.png" </img>`;
 }
-
 // pointing to selected location & create red marker layer
 function pointAndColor() {
   mymap.panTo({
@@ -91,12 +89,5 @@ function clickedMarker(e) {
   fetchWeatherApi(city.options[city.selectedIndex].value);
 }
 
-//making it typescript with ts-node
-// arrange folders & links
-//make mobile friendyly
-//add weatherApi title - design
 //caching
 //making readme
-
-//adding icons - bonus V
-// String iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
